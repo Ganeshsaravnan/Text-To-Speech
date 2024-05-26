@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech</title>
+</head>
+<body>
+    <center>
+         <h1>Text To Speech <span>Converter</span></h1>
+          <div class="container">
+            <textarea placeholder=" Write Anything Here..." id="input"></textarea>
+            <button class="button" onclick="speak()">Speak</button>
+          </div>
+    </center>
+    <style>
+     *{
+        background-color: rgb(255, 135, 122);
+        font-family: 'Times New Roman', Times;
+        margin: 0px;
+        padding: 0px;
+     }
+     h1{
+        margin-left: 7px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: whitesmoke;
+        margin: 10px;
+     }   
+     span{
+        color: greenyellow;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     }
+     #input{
+        margin-left: 17px;
+        width: 400px;
+        height: 240px;
+        background-color: white;
+        border: none;
+        display: flex;
+        background-color: rgb(228, 114, 101);
+        color: #fff;
+        border-radius: 5px;
+        
+     }
+     .button{
+        margin-left: 17px;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+        background-color: antiquewhite;
+        color: gray;
+        border-radius: 3px;
+        border: none;
+     }
+    </style>
+    <script>
+        function speak(){
+        var text = document.getElementById("input").value
+        var utterance = new SpeechSynthesisUtterance(text)
+        speechSynthesis.speak(utterance)
+        }
+    </script>
+</body>
+</html>
